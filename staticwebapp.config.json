@@ -1,0 +1,31 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["*.{css,js,png,jpg,jpeg,gif,svg,ico,webp,woff,woff2,ttf,eot}"]
+  },
+  "routes": [
+    {
+      "route": "/facts",
+      "rewrite": "/facts.html"
+    },
+    {
+      "route": "/species",
+      "rewrite": "/species.html"
+    },
+    {
+      "route": "/gallery",
+      "rewrite": "/gallery.html"
+    }
+  ],
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  }
+}

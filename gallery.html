@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wolf World — Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Lightbox overlay */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+    #lightbox.open {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+    }
+    #lightbox-caption {
+      margin-top: 1rem;
+      color: var(--color-light);
+      font-size: 1rem;
+      text-align: center;
+    }
+    #lightbox-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--color-white);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">🐺 Wolf<span>World</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="facts.html">Facts</a></li>
+        <li><a href="species.html">Species</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600273520823-b9a36c6b6e39?w=1400&auto=format&fit=crop');"></div>
+    <div class="hero-content">
+      <h1>Wolf <span>Gallery</span></h1>
+      <p>A visual journey through the habitats and behaviours of wolves around the world. Click any photo to enlarge.</p>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <button id="lightbox-close" aria-label="Close lightbox">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p id="lightbox-caption"></p>
+  </div>
+
+  <main>
+
+    <h2 class="section-heading">Portraits &amp; Packs</h2>
+    <p class="section-subheading">Click any image to view full size</p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1564466809058-bf4114d55352?w=1200&auto=format&fit=crop"
+           data-caption="A gray wolf surveys its territory from a rocky outcrop.">
+        <img src="https://images.unsplash.com/photo-1564466809058-bf4114d55352?w=600&auto=format&fit=crop" alt="Gray wolf on rock" loading="lazy" />
+        <div class="gallery-caption">Gray wolf on rocky outcrop</div>
+      </div>
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1611159063981-360a6a8b0b83?w=1200&auto=format&fit=crop"
+           data-caption="A lone wolf howls into the winter sky, calling to distant pack members.">
+        <img src="https://images.unsplash.com/photo-1611159063981-360a6a8b0b83?w=600&auto=format&fit=crop" alt="Wolf howling in snow" loading="lazy" />
+        <div class="gallery-caption">Wolf howling in snow</div>
+      </div>
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=1200&auto=format&fit=crop"
+           data-caption="A wolf peers through the forest undergrowth, alert and watchful.">
+        <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&auto=format&fit=crop" alt="Wolf in forest" loading="lazy" />
+        <div class="gallery-caption">Wolf in forest undergrowth</div>
+      </div>
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1561948955-570b270e7c36?w=1200&auto=format&fit=crop"
+           data-caption="Two pack members interact in an open meadow, reinforcing social bonds.">
+        <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?w=600&auto=format&fit=crop" alt="Wolf pack interaction" loading="lazy" />
+        <div class="gallery-caption">Pack interaction in a meadow</div>
+      </div>
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&auto=format&fit=crop"
+           data-caption="Close-up of a wolf's intense amber eyes, reflecting centuries of evolution as a predator.">
+        <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&auto=format&fit=crop" alt="Wolf close-up portrait" loading="lazy" />
+        <div class="gallery-caption">Wolf portrait — piercing gaze</div>
+      </div>
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1600273520823-b9a36c6b6e39?w=1200&auto=format&fit=crop"
+           data-caption="Wolves crossing a frozen river at dusk — endurance is their greatest asset.">
+        <img src="https://images.unsplash.com/photo-1600273520823-b9a36c6b6e39?w=600&auto=format&fit=crop" alt="Wolves at dusk" loading="lazy" />
+        <div class="gallery-caption">Wolves crossing a frozen river</div>
+      </div>
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1526908011582-c54a0c29b39b?w=1200&auto=format&fit=crop"
+           data-caption="A wolf pauses in the snow, coat dusted white after a heavy fall.">
+        <img src="https://images.unsplash.com/photo-1526908011582-c54a0c29b39b?w=600&auto=format&fit=crop" alt="Wolf in heavy snowfall" loading="lazy" />
+        <div class="gallery-caption">Wolf resting in snowfall</div>
+      </div>
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1581852017103-68ac65514cf7?w=1200&auto=format&fit=crop"
+           data-caption="Wolf pups emerge from the den for the first time — a hopeful sign for the pack's future.">
+        <img src="https://images.unsplash.com/photo-1581852017103-68ac65514cf7?w=600&auto=format&fit=crop" alt="Wolf pup" loading="lazy" />
+        <div class="gallery-caption">Wolf pup exploring the world</div>
+      </div>
+
+      <div class="gallery-item"
+           data-src="https://images.unsplash.com/photo-1612024782955-49fae79e42bb?w=1200&auto=format&fit=crop"
+           data-caption="A wolf stands alert on a hillside, scanning the valley below for prey.">
+        <img src="https://images.unsplash.com/photo-1612024782955-49fae79e42bb?w=600&auto=format&fit=crop" alt="Wolf on hillside" loading="lazy" />
+        <div class="gallery-caption">Wolf scanning from a hillside</div>
+      </div>
+
+    </div>
+
+    <p style="color: var(--color-muted); font-size: 0.85rem;">
+      Photos courtesy of <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> photographers — shared under the Unsplash License.
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© 2025 WolfWorld &nbsp;|&nbsp; Built with ❤️ for wolf enthusiasts &nbsp;|&nbsp;
+      <a href="https://azure.microsoft.com/en-us/services/app-service/static/" target="_blank" rel="noopener">Hosted on Azure Static Web Apps</a>
+    </p>
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.dataset.src;
+        lightboxImg.alt = item.querySelector('img').alt;
+        lightboxCaption.textContent = item.dataset.caption;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
